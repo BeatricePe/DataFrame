@@ -12,7 +12,7 @@ Created on Tue Mar 13 14:04:45 2018
 @author: Bea
 """
 import pandas as pd
-
+v
 #function that reads the data frames and that converts the column of the time in ms
 def ReadingAndConversion (file_in, sepfile, column_time):
     Dataframe = pd.read_csv (file_in, sep = sepfile)
