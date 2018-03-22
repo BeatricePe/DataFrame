@@ -12,7 +12,10 @@ Created on Tue Mar 13 14:04:45 2018
 @author: Bea
 """
 import pandas as pd
-v
+
+#I take the start of each beh and until the counter is minor than the time of stop of the same beh I add 50 to the counter.
+#1 frames = 50 ms so every 50ms I have 1 frame and the corrispondent beh will be increased until the counter is minor than the time of stop of the same beh 
+
 #function that reads the data frames and that converts the column of the time in ms
 def ReadingAndConversion (file_in, sepfile, column_time):
     Dataframe = pd.read_csv (file_in, sep = sepfile)
@@ -31,9 +34,9 @@ def BehaviorAndFramesCounter(Data, ColumnTime, ColumnBeh, ColumnEvent, FrameSecC
     ListPlace = []
     ListFramePlace = []
     for i in range (len (Data)):
-        if Data[ColumnBeh][i] != StrPlace:
-            if Data[ColumnEvent][i] != StrEvent:
-                while Data [ColumnBeh][i] != Data [ColumnBeh][j] or Data[ColumnEvent][j] != StrEvent:
+        if Data[ColumnBeh][i] != StrPlace: # I want select only the place
+            if Data[ColumnEvent][i] != StrEvent: # I want the START of the each beh
+                while Data [ColumnBeh][i] != Data [ColumnBeh][j] or Data[ColumnEvent][j] != StrEvent:#I want the STOP of the SAME beh that I select above
                     j = j+1
                 while count < Data [ColumnTime][j]:
                     ListBeh.append(Data[ColumnBeh][i])
