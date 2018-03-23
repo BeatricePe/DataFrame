@@ -5,6 +5,7 @@ Created on Tue Mar 13 14:04:45 2018
 @author: Bea
 """
 import pandas as pd
+#I take the start of each beh and until the counter is minor than the time of start of the successive beh I add 50 to the counter.
 
 #function that reads the data frames and that converts the column of the time in ms
 def ReadingAndConversion (file_in, sepfile, column_time):
