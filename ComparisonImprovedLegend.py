@@ -45,13 +45,13 @@ def SelectableColors(behList, ColorList, minimum, maximum, dic):
         width = el[0]
         pos = width + pos
         if beh in dic.keys():
-            rect = patches.Rectangle (p1, width, maximum*5, facecolor = dic.get(beh))
+            rect = patches.Rectangle (p1, width, 5, facecolor = dic.get(beh))
         else:
             for col in ColorList:
                 print(str(ColorList.index(col)) + '  ' + col)
             colorIndex = int(input('insert the color number for ' + beh + ':'))
             dic.update ({beh: ColorList[colorIndex]})
-            rect = patches.Rectangle(p1, width, maximum*5, facecolor=ColorList[colorIndex])
+            rect = patches.Rectangle(p1, width, 5, facecolor=ColorList[colorIndex])
             ColorList.remove(ColorList[colorIndex])
         listaRect.append(rect)
     return (listaRect, dic)
