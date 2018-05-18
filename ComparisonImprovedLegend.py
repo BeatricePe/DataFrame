@@ -52,7 +52,7 @@ def SelectableColors(behList, ColorList, minimum, maximum, dic):
             colorIndex = int(input('insert the color number for ' + beh + ':'))
             dic.update ({beh: ColorList[colorIndex]})
             rect = patches.Rectangle(p1, width, 5, facecolor=ColorList[colorIndex])
-            ColorList.remove(ColorList[colorIndex])
+           
         listaRect.append(rect)
     return (listaRect, dic)
 
@@ -63,7 +63,7 @@ def GenColorList (n):
     ColorList = []
     for name, cod in matplotlib.colors.cnames.items(): 
         ColorList.append(name)
-        shuffle(ColorList)
+       
     return ColorList [0:n]
         
 """
