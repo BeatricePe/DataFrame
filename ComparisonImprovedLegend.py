@@ -63,6 +63,7 @@ def GenColorList (n):
     ColorList = []
     for name, cod in matplotlib.colors.cnames.items(): 
         ColorList.append(name)
+    ColorList.sort()
        
     return ColorList [0:n]
         
